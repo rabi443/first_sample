@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        body{
+            text-align: center;
+            background-color: aliceblue;
+            overflow:auto;
+        }
+        #top-section{
+            text-align: center;
+            overflow: auto;
+            display: flexbox;
+            color: white;
+            background-color: rgb(11, 30, 53);
+            border-top-left-radius: 8px;
+            padding: 1px;
+        }
+        #navbar{
+            text-decoration: none;
+            padding: 15px;
+            background-color: rgb(94, 75, 115);
+
+        }
+        #navbar a{
+            text-decoration: none;
+            padding-right: 20px;
+            padding-left: 20px;
+            color: white;
+        }       
+        a:hover{
+            color: rgb(172, 166, 214);
+        }
+        #footer-section{
+            text-align: center;
+            overflow: auto;
+            display: flexbox;
+            color: white;
+            background-color: rgb(11, 30, 53);
+            border-bottom-left-radius: 8px;
+            padding-top: 40px;
+            padding-bottom: 50px;
+            margin-top: 5%;
+        }
+        #footer-section a{
+            text-decoration: none;
+            color: white;
+        }
+        #form-container{
+            text-align: center;
+            align-items: center;
+            justify-items: center;
+        }
+        #form-container form{
+            background-color: #fff;
+            
+            width: 50%;
+            margin-left: 25%;
+            padding: 10px 10px 10px 20px;
+            overflow: auto;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        input{
+            width: 95%;
+            margin-bottom: 10px;
+            float: left;
+            padding: 8px;
+            border: 0px;
+            background-color: #edf1f5;
+        }
+        label{
+            float: left;
+        }
+        select{
+            width: 97%;
+            margin-bottom: 10px;
+            padding: 8px;
+            float: left;
+            border: 0px;
+            background-color: #edf1f5;
+        }
+        button{
+            color: white;
+            padding: 8px;
+            border-radius: 4px;
+            background-color: rgb(27, 48, 139);
+            width: 50%;
+        }
+
+        .sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000; /* Ensure the navbar is above other content */
+        }
+    </style>
+   
+</head>
+<body>
+   <div id="top-section">
+    
+            <h2>Digital Election Platform</h2>
+    </div>
+    <div id="navbar" style="overflow: hidden; background-color: rgb(94, 75, 115);padding: 15px;text-align: center; ">
+            <a href="../index.php">Login</a>
+            <!-- <a href="#">Admin</a> -->
+            <!-- <a href="#">About us</a> -->
+    </div> 
+    <div id="clz_logo">
+       
+    </div><br>
+    <div id="form-container">
+        <!-- <img src="../upload_files/hdc.png" alt="HDC"><br><br><br> -->
+        <form  name="myform" action="database/register.php" method="POST" enctype="multipart/form-data">
+            <img src="../upload_files/hdc.png" alt="HDC">
+            <h2><u>Fill the form to register.</u></h2>
+
+            <label for="first_name">First name:</label><br>
+            <input type="text" name="first_name" placeholder="" required>
+            <span id="first_name_error" style="color: red;"></span>
+
+            <label for="middle_name">Middle name:</label><br>
+            <input type="text" name="middle_name" placeholder="">
+            <span id="middle_name_error" style="color: red;"></span>
+
+            <label for="last_name">Last name:</label><br>
+            <input type="text" name="last_name" placeholder="" required>
+            <span id="last_name_error" style="color: red;"></span>
+
+            <label for="number">Number:</label><br>
+            <input type="tel" name="number" placeholder="" required>
+            <span id="number_error" style="color: red;"></span>
+
+            <label for="password">Password:</label><br>
+            <input type="password" name="password" placeholder="" required>
+            <span id="password_error" style="color: red;"></span>
+
+            <label for="cpassword">Confirm password:</label><br>
+            <input type="password" name="cpassword" placeholder="" required>
+            <span id="cpassword_error" style="color: red;"></span>
+
+            <label for="gmail">Gmail:</label><br>
+            <input type="gmail" name="gmail" placeholder="" >
+            <span id="gmail_error" style="color: red;"></span>
+
+            <label for="address">Address:</label><br>
+            <input type="text" name="address" placeholder="" required>
+            <span id="address_error" style="color: red;"></span>
+
+            <input type="hidden" name="status" value=0>
+
+            <label for="program">Select Program:</label><br>
+            <select name="program" id="program" required>
+                <option value=""></option>
+                <option value="BIM">BIM</option>
+                <!-- <option value="BCA">BCA</option>
+                <option value="BSc.CSIT">BSc.CSIT</option>
+                <option value="BHM">BHM</option>
+                <option value="BBS">BBS</option> -->
+            </select>
+            <span id="program_error" style="color: red;"></span>
+
+            <label for="batch">Select Batch</label>
+            <select name="batch" id="batch" required>
+                <option value=""></option>
+                <option value="2015">2015</option>
+                <option value="2016">2016</option>
+                <option value="2017">2017</option>
+                <option value="2018">2018</option>
+                <option value="2019">2019</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+                <option value="2025">2025</option>
+            </select>
+
+            <label for="semester">Select Semester:</label><br>
+            <select name="semester" id="semester" required>
+                <option value=""></option>
+                <option value="First">First</option>
+                <option value="Second">Second</option>
+                <option value="Third">Third</option>
+                <option value="Fourth">Fourth</option>
+                <option value="Fifth">Fifth</option>
+                <option value="Sixth">Sixth</option>
+                <option value="Seventh">Seventh</option>
+                <option value="Eighth">Eighth</option>
+            </select>
+            <span id="semester_error" style="color: red;"></span>
+
+            <label for="dob">Date of birth:</label><br>
+            <input type="date" id="dob" name="dob" paceholder="" required>
+            <span id="dob_error" style="color: red;"></span>
+
+            <label for="roll_no">Roll_No:</label><br>
+            <input type="text" name="roll_no" placeholder="" required>
+            <span id="roll_no_error" style="color: red;"></span>
+
+            <label for="gender">Select Gender:</label><br>
+            <select name="gender" id="gender" required>
+                <option value=""></option>
+                <option value="male">male</option>
+                <option value="female">female</option>
+                <option value="other">other</option>
+            </select>
+            <span id="gender_error" style="color: red;"></span>
+
+            <!-- <label for="role">Select Role:</label><br>
+            <select name="role" id="role" required>
+                <option value=""></option>
+                <option value="student">Student</option>
+                <option value="teacher">Teacher</option>
+                <option value="staff">Staff</option>
+            </select>
+            <span id="role_error" style="color: red;"></span> -->
+
+            <label for="profilephoto" name="profilephoto">Upload your pp size profile photo:</label>
+            <input type="file" name="image" style="width: 25%; margin-bottom: 20px;" required>
+
+            <button onclick="return validate()">Signin</button><br><br>
+            <a href="../index.php" style="color:blue; text-decoration: none;">cancel</a><br><br>
+            Already registered?
+            <a href="../index.php" style="color:blue;">Login here.</a><br><br><br><br>
+        </form>
+    </div>
+
+        <footer id="footer-section">
+            Copyright © 2024, All rights reserved. <a>The Constructor.</a>
+        </footer>
+    
+    <script>
+        function validate(){
+            var first_name=document.myform.first_name.value;
+            var last_name=document.myform.last_name.value;
+            var number=document.myform.number.value;
+            var password=document.myform.password.value;
+            var cpassword=document.myform.cpassword.value;
+            var gmail=document.myform.gmail.value;
+            var address=document.myform.address.value;
+            var dob=document.myform.dob.value;
+            var program=document.myform.program.value;
+            var semester=document.myform.semester.value;
+            var roll_no=document.myform.roll_no.value;
+            var gender=document.myform.gender.value;
+            var role=document.myform.role.value;
+           
+            document.getElementById("first_name_error").innerHTML="";
+            document.getElementById("last_name_error").innerHTML="";
+            document.getElementById("number_error").innerHTML="";
+            document.getElementById("password_error").innerHTML="";
+            document.getElementById("cpassword_error").innerHTML="";
+            document.getElementById("gmail_error").innerHTML="";
+            document.getElementById("address_error").innerHTML="";
+            // document.getElementById("age_error").innerHTML="";
+            document.getElementById("dob_error").innerHTML="";
+            document.getElementById("program_error").innerHTML="";
+            document.getElementById("semester_error").innerHTML="";
+            document.getElementById("roll_no_error").innerHTML="";
+            document.getElementById("gender_error").innerHTML="";
+            document.getElementById("role_error").innerHTML="";
+
+            
+            if(first_name.trim()==""){
+                document.getElementById("first_name_error").innerHTML="first name empty";
+                document.myform.first_name.focus();
+                return false;
+            }
+            else if(last_name.trim()==""){
+            document.getElementById("last_name_error").innerHTML="last name empty";
+            document.myform.last_name.focus();
+            return false;
+            }
+            else if(number==""){
+                document.getElementById("number_error").innerHTML="number can not be empty";
+                document.myform.number.focus();
+                return false;
+            }
+            else if(isNaN(number)){
+                document.getElementById("number_error").innerHTML="input valid number";
+                document.myform.number.focus();
+                return false;
+            }
+            else if(password==""){
+                document.getElementById("password_error").innerHTML="password can not be empty";
+                document.myform.password.focus();
+                return false;
+            }
+            else if(cpassword==""){
+                document.getElementById("cpassword_error").innerHTML="confirm password can not be empty";
+                document.myform.cpassword.focus();
+                return false;
+            }
+            else if(password!=cpassword){
+                document.getElementById("cpassword_error").innerHTML="confirm password must be same as password";
+                document.myform.cpassword.focus();
+                return false;
+            }
+            else if(address.trim()==null){
+                document.getElementById("address_error").innerHTML="input your address.";
+                document.myform.address.focus();
+                return false;
+            }
+            // else if(age.trim()==null || isNaN(age)){
+            //     document.getElementById("age_error").innerHTML="input your age.";
+            //     document.myform.age.focus();
+            //     return false;
+            // }
+            else if(dob.trim()==null){
+                document.getElementById("dob_error").innerHTML="select your date of birth.";
+                document.myform.dob.focus();
+                return false;
+            }
+            else if(program.trim()==null){
+                document.getElementById("program_error").innerHTML="choose your program.";
+                document.myform.program.focus();
+                return false;
+            }
+            else if(semester.trim()==null){
+                document.getElementById("semester_error").innerHTML="choose your semester.";
+                document.myform.semester.focus();
+                return false;
+            }
+            else if(roll_no.trim()==null){
+                document.getElementById("roll_no_error").innerHTML="enter your roll - no.";
+                document.myform.roll_no.focus();
+                return false;
+            }
+            else if(gender.trim()=null){
+                document.getElementById("gender_error").innerHTML="choose your gender";
+                document.myform.gender.focus();
+                return false;
+            }
+            else if(role.trim()==null){
+                document.getElementById("role_error").innerHTML="choose your role.";
+                document.myform.role.focus();
+                return false;
+            }
+            else{
+                //alert("success");
+                return true;
+            }   
+        }
+    </script>
+    <script>
+        // JavaScript to make navbar fixed when it reaches the top of the page
+        window.onscroll = function() {fixNavbar()};
+
+        var navbar = document.getElementById("navbar");
+        var sticky = navbar.offsetTop;
+
+        function fixNavbar() {
+            if (window.pageYOffset >= sticky) {
+            navbar.classList.add("sticky");
+            } else {
+            navbar.classList.remove("sticky");
+            }
+        }
+    </script>
+    
+    
+</body>
+</html>
