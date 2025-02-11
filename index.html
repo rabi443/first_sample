@@ -1,3 +1,19 @@
+<?php
+$epay_url = "https://rc-epay.esewa.com.np/api/epay/main/v2/form"; // Test endpoint
+
+$pid = uniqid("TEST-", true); // Unique transaction ID for testing
+$amount = 3; // Test amount
+$tax_amount = 2; // Test tax amount
+$total_amount = $amount + $tax_amount;
+$successurl = "https://github.com/rabi443/esewa/blob/main/success.php?q=su"; // Update with your test success URL
+$failedurl = "https://github.com/rabi443/esewa/blob/main/failed.php?q=fu"; // Update with your test failure URL
+$product_code = "EPAYTEST";
+$secret_key = "8gBm/:&EnhH.1/q"; // Get this from eSewa support
+
+// Generate signature
+$message = "total_amount=$total_amount,transaction_uuid=$pid,product_code=$product_code";
+$signature = base64_encode(hash_hmac('sha256', $message, $secret_key, true));
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
